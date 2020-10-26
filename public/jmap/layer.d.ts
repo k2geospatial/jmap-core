@@ -43,12 +43,12 @@ declare interface JLayerTreeElement {
   path: string
 }
 
-declare type JLayerTree = Array<JLayerTreeElement>
+declare type JLayerTree = JLayerTreeElement[]
 
 declare interface JLayerThematic {
   id: number
-  enabled: boolean
-  isVisible: boolean
+  enabled: boolean // initial visibility
+  isVisible: boolean // user visibility
   name: string
   description: string
   type: JLayerThematicType
@@ -57,6 +57,34 @@ declare interface JLayerThematic {
   elementCount: number
   title: string
   subTitle: string
+}
+
+declare interface JLayerThematicClassification extends JLayerThematic {
+  categoryCount: number
+  dynamicLegend: boolean
+  colorPaletteName: string
+  nullValueSupported: boolean
+  categories: JLayerThematicCategory[]
+}
+
+declare interface JLayerThematicCategory {
+  title: string
+  style: JLayerStyle
+  enabled: boolean
+  nullValueCategory: boolean
+}
+
+declare interface JLayerThematicCategoryIndividual extends JLayerThematicCategory {
+  value: any
+}
+
+declare interface JLayerThematicCategoryRange extends JLayerThematicCategory {
+  minimum: number
+  maximum: number
+  includeMax: boolean
+  includeMin: boolean
+  percentMinimum: number
+  percentMaximum: number
 }
 
 declare interface JLayerSearchByAttributesParams {
