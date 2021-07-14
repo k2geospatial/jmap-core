@@ -480,9 +480,8 @@ declare interface JFormSubmitResult {
   deletedFeatureIds?: JId[]
 }
 
-declare interface JFormDeleteResult {
-  inSuccessIds: JId[]
-  inErrorIds: JId[]
+declare interface JFormDeleteResult extends JFeatureDeleteByIdsResult {
+  // nothing to add
 }
 
 declare interface JFormErrors {

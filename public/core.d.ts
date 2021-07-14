@@ -219,7 +219,7 @@ declare namespace JMap {
      * JMap.Photo.displayPhotosPopup(4, 345)
      * ```
      */
-    function displayPhotosPopup(photos: JPhoto[], params?: JPhotoOpenPopupParams): Promise<void>
+    function displayPhotosPopup(photos: JPhoto[], params?: JPhotoOpenPopupParams): void
 
     /**
      * **JMap.Photo.closePhotoPopup**

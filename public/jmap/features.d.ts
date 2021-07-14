@@ -19,6 +19,7 @@ declare interface JFeatureEventDeleteParams {
 }
 
 declare interface JFeatureDeleteByIdsResult {
-  success: JId[]
-  error: JId[]
+  layerId: JId
+  inSuccessIds: JId[]
+  inErrorIds: JId[]
 }
