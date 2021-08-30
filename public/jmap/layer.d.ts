@@ -95,13 +95,20 @@ declare interface JLayer extends JLayerTreeElement {
   queries: JQuery[]
   extent: JBoundaryBox | null
   permissions: JLayerPermissions
-  canEditGeometry: boolean
-  hasAttributeForm: boolean
-  hasExternalForms: boolean
   selectable: boolean
   listedInTree: boolean
   authorPropertyName: string
   lowercasedAttributeIds: string[]
+  canEditGeometry: boolean
+  hasAttributeForm: boolean
+  hasExternalForms: boolean
+  forms: JLayerForm[]
+}
+
+declare interface JLayerForm {
+  id: JId
+  name: string
+  type: JFormType
 }
 
 declare interface JLayerAttribute {
