@@ -691,12 +691,16 @@ export interface JProjectService {
   getMaxScale(): number
   getSelectionColor(): string
   getBackgroundColor(): string
-  getInitialExtent(): JBounds | null
+  getInitialExtent(): JBoundaryBox | null
+  canChangeInitialExtent(): boolean
+  getMaximumExtent(): JBoundaryBox | null
+  canChangeMaximumExtent(): boolean
   getBase64ImageThumbnail(): string
   loadAllProjectThumbnails(params?: JProjectLoadThumbnailsParams): Promise<void>
   isChangeDisabled(): boolean
   setChangeEnabled(): void
   setChangeDisabled(): void
+  update(projectData: Partial<JProject>): Promise<void>
 }
 
 export interface JLayerService {
@@ -808,6 +812,7 @@ export interface JUserService {
   changePassword(newPassword: string, currentPassword: string): Promise<void>
   getMinimumPasswordLength(): number
   isPseudoUser(): boolean
+  isAdminUser(): boolean
 }
 
 export interface JLanguageService {

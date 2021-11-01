@@ -4972,11 +4972,63 @@ declare namespace JMap {
      * @throws If no project is loaded
      * @example ```ts
      * 
-     * // returns the project initial extent if exists
+     * // returns the project initial extent if exists, or null
      * JMap.Project.getInitialExtent()
      * ```
      */
-    function getInitialExtent(): JBounds | null
+    function getInitialExtent(): JBoundaryBox | null
+
+    /**
+     * **JMap.Project.canChangeInitialExtent**
+     * 
+     * Returns true if the user can change the project initial extent.
+     * 
+     * Returns false if:
+     *  - the user doesn't have the permission
+     *  - no user is logged in
+     *  - no project is activated.
+     * 
+     * @example ```ts
+     * 
+     * // returns true if the user can change the project initial extent
+     * JMap.Project.canChangeInitialExtent()
+     * ```
+     */
+    function canChangeInitialExtent(): boolean
+
+    /**
+     * **JMap.Project.getMaximumExtent**
+     * 
+     * Returns loaded JMap project max extent.
+     * 
+     * If set the user cannot pan outside this extent.
+     * 
+     * @throws If no project is loaded
+     * @example ```ts
+     * 
+     * // returns the project max extent if exists
+     * JMap.Project.getMaximumExtent()
+     * ```
+     */
+    function getMaximumExtent(): JBoundaryBox | null
+
+    /**
+     * **JMap.Project.canChangeMaximumExtent**
+     * 
+     * Returns true if the user can change the project maximum extent.
+     * 
+     * Returns false if:
+     *  - the user doesn't have the permission
+     *  - no user is logged in
+     *  - if no project is activated
+     * 
+     * @example ```ts
+     * 
+     * // returns true if the user can change the project maximum extent
+     * JMap.Project.canChangeMaximumExtent()
+     * ```
+     */
+    function canChangeMaximumExtent(): boolean
 
     /**
      * **JMap.Project.getBase64ImageThumbnail**
@@ -5151,6 +5203,29 @@ declare namespace JMap {
      * ```
      */
     function setChangeDisabled(): void
+
+    /**
+     * **JMap.Project.update**
+     * 
+     * Partial or complete change of a project.
+     * 
+     * @param extent the new extent, null to unset the extent
+     * @throws If no project is loaded, or if user doesn't have admin rights
+     * @example ```ts
+     * 
+     * // set a new maximal extent for the current project
+     * JMap.Project
+     *   .update({
+     *     maximalExtent: {
+     *       sw: { x: 10, y: 20 },
+     *       ne: { x: 20, y: 40 }
+     *     }
+     *   })
+     *   .then(() => console.info("Project maximal extent updated"))
+     *   .catch(error => console.error("Project maximal extent not updated", error))
+     * ```
+     */
+    function update(projectData: Partial<JProject>): Promise<void>
   }
 
   /**
@@ -5525,6 +5600,19 @@ declare namespace JMap {
      * ```
      */
     function isPseudoUser(): boolean
+
+    /**
+     * ***JMap.User.isAdminUser***
+     * 
+     * Return true if the currently logged in user is a JMap administrator.
+     * 
+     * @example ```ts
+     * 
+     * // returns true if current user is an admin user
+     * JMap.User.isAdminUser()
+     * ```
+     */
+    function isAdminUser(): boolean
   }
 
   /**

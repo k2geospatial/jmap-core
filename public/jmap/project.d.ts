@@ -29,7 +29,8 @@ declare interface JProject {
   scaleMin: number
   colorSelection: string
   colorBackground: string
-  initialExtent: JBounds | null
+  initialExtent: JBoundaryBox | null
+  maximumExtent: JBoundaryBox | null
   apiKey: {
     google: string | null
     bing: string | null

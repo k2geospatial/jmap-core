@@ -1,10 +1,3 @@
-declare interface JBounds {
-  x1: number
-  x2: number
-  y1: number
-  y2: number
-}
-
 declare interface JBoundaryBox {
   sw: JLocation
   ne: JLocation
