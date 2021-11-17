@@ -411,4 +411,16 @@ declare interface JCoreOptions {
    * }]
    */
   extensionsUrlOverride?: JExtensionServerOverride[]
+
+  /**
+   * By default NG Core provide a main layout in order to display:
+   *  - a loader incating NG Core is loading
+   *  - a login panel
+   *  - a project selection panel
+   * 
+   * But you can avoid this UI by setting this option to true.
+   * 
+   * For example NG App don't need NG Core minimal UI and use this option.
+   */
+  hideMainLayout: boolean
 }
