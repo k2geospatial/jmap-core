@@ -79,11 +79,6 @@ declare interface JMapEventSelectionChangedParams {
   changesByLayerId: { [layerId: string]: JMapLayerSelectionChanges }
 }
 
-declare interface JMapEventSourceRefreshedParams {
-  layerId: JId
-  mapboxSourceId: string
-}
-
 declare type JMapSelection = {
   [ key in JId ]: GeoJSON.Feature[]
 }

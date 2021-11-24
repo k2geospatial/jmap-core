@@ -276,7 +276,6 @@ export interface JMapEventModule extends JEventModule {
     containerReady(listenerId: string, fn: (params: JMapEventContainerReadyParams) => void): void
     containerResized(listenerId: string, fn: (params: JMapEventContainerResizedParams) => void): void
     selectionChanged(listenerId: string, fn: (params: JMapEventSelectionChangedParams) => void): void
-    sourceRefreshed(listenerId: string, fn: (params: JMapEventSourceRefreshedParams) => void): void
   }
 }
 

@@ -7652,24 +7652,6 @@ declare namespace JMap {
          * ```
          */
         function selectionChanged(listenerId: string, fn: (params: JMapEventSelectionChangedParams) => void): void
-
-        /**
-         * ***JMap.Event.Map.on.sourceRefreshed***
-         * 
-         * This event is triggered when a vector layer is refreshed.
-         * 
-         * @param listenerId Your listener id (must be unique for all map events)
-         * @param fn Your listener function
-         * @example ```ts
-         * 
-         * // When a vector layer is refreshed, will display the layerId and the soucre id in the console
-         * JMap.Event.Map.on.sourceRefreshed(
-         *    "custom-source-refreshed",
-         *    params => console.log(`Layer id=${params.layerId} refreshed (source id="${params.mapboxSourceId}")`)
-         * )
-         * ```
-         */
-        function sourceRefreshed(listenerId: string, fn: (params: JMapEventSourceRefreshedParams) => void): void
       }
       /**
        * ***JMap.Event.Map.activate***
