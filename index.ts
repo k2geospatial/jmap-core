@@ -334,6 +334,7 @@ export interface JMainState {
 }
 
 export interface JMapContextState {
+  isInitialized: boolean
   isActive: boolean
   isLoading: boolean
   hasLoadingError: boolean
