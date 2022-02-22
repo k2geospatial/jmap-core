@@ -808,7 +808,7 @@ export interface JLayerService {
   setVisible(layerId: JId, visible: boolean): void
   setLayersVisibility(params: JLayerSetLayersVisibilityParams[]): void
   ensureLayerIsVisible(layerId: JId): void
-  ensureLayersVisibility(layerIds: JLayerSetLayersVisibilityParams[]): void
+  ensureLayersVisibility(layerParams: JLayerSetLayersVisibilityParams[]): void
   setLayerGroupExpansion(layerGroupId: JId, isExpanded: boolean): void
   setLayerGroupsExpansion(params: JLayerSetLayerGroupsExpansionParams[]): void
   deleteLayer(layerId: JId): void
