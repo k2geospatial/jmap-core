@@ -5,6 +5,12 @@ declare const enum JLAYER_LAYER_TYPES {
   OGC_API_FEATURES = "OGC_API_FEATURES"
 }
 
+// ALL_LAYER_LAYER_REQUEST_MODES in all-enum.ts
+declare const enum JLAYER_LAYER_REQUEST_MODES {
+  BY_TILE = "BY_TILE",
+  BY_REGION = "BY_REGION"
+}
+
 // ALL_LAYER_ELEMENT_TYPES in all-enum.ts
 declare const enum JLAYER_ELEMENT_TYPES {
   POINT = "POINT",
@@ -272,6 +278,7 @@ declare interface JLayer extends JLayerTreeElement {
   geometry: JLayerGeometry
   elementType: JLAYER_ELEMENT_TYPES
   layerType: JLAYER_LAYER_TYPES
+  useClientCache: boolean
   defaultMetadatas: JLayerMetadata[]
   metadataSections: JLayerMetadataSection[]
   attributes: JLayerAttribute[]
