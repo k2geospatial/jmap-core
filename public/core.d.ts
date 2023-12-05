@@ -12185,13 +12185,17 @@ declare namespace JMap {
      *
      * Parameters initialWidth and initialHeight are in pixels.
      *
+     * Embedding a page that sets the `X-Frame-Options` or `Content-Security-Policy: frame-ancestors` headers in an incompatible way may cause the display of the page to fail.
+     *
+     * See {@linkcode https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options here} and {@linkcode https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors here} for details
+     *
      * @throws Error if invalid parameters are passed
      * @param params parameters needed to open the iframe popup
      * @example ```ts
      *
      * // Open an embedded popup of k2geospatial website
      * JMap.UI.openIFramePopup({
-     *  src: "https://k2geospatial.com/",
+     *  src: "https://my.web.site.com/",
      *  initialPosition: { x: 400, y: 250 },
      *  initialWidth: 400,
      *  initialHeight: 250,
