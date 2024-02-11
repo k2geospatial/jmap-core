@@ -907,6 +907,7 @@ export interface JUserService {
     password: string
   ): JJMapServerPasswordPolicyCompliance | JJMapCloudPasswordPolicyCompliance
   isPseudoUser(): boolean
+  isSystemUser(): boolean
   getOrganizationId(): string
 }
 
