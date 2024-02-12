@@ -6504,6 +6504,19 @@ declare namespace JMap {
     function isPseudoUser(): boolean
 
     /**
+     * ***JMap.User.isSystemUser***
+     *
+     * Returns true if the currently logged in user is a JMap system user (typically when NG is openned from JMap Admin).
+     *
+     * @example ```ts
+     *
+     * // returns true if current user is a system user
+     * JMap.User.isSystemUser()
+     * ```
+     */
+    function isSystemUser(): boolean
+
+    /**
      * ***JMap.User.getOrganizationId***
      *
      * Returns user's organization id.
