@@ -230,7 +230,7 @@ declare interface JCoreOptions {
   restBaseUrl?: string
 
   /**
-   * Optional JMap Server base url for report.
+   * Optional JMap Server base url for reports.
    *
    * Default value is : http://<jmap-server-address>:<jmap-server-port>
    *
