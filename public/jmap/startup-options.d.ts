@@ -230,6 +230,31 @@ declare interface JCoreOptions {
   restBaseUrl?: string
 
   /**
+   * Optional JMap Server base url for report.
+   *
+   * Default value is : http://<jmap-server-address>:<jmap-server-port>
+   *
+   * In some circumstances (e.g. in a reverse proxy situation), you may need to specify a reportsBaseUrl if the default value is not correct.
+   *
+   * ```html
+   * <html>
+   *   ...
+   *   <body>
+   *     <script type="text/javascript">
+   *       window.JMAP_OPTIONS = {
+   *         ...
+   *         // a valid report base url
+   *         reportsBaseUrl: "http://my-custom-jmap-server-url/reverse-proxy-path"
+   *       }
+   *     </script>
+   *     ...
+   *   </body>
+   * </html>
+   * ```
+   */
+  reportsBaseUrl?: string
+
+  /**
    * If the project you access can be accessed anonymously,
    * you are not forced to pass a session token but you have
    * to explicitly tell the JMap NG library to log as an anonymous
