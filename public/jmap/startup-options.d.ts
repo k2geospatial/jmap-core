@@ -232,7 +232,7 @@ declare interface JCoreOptions {
   /**
    * Optional JMap Server base url for reports.
    *
-   * Default value is : http://<jmap-server-address>:<jmap-server-port>
+   * Default value is : http://<jmap-server-address>:<jmap-server-port>/reports
    *
    * In some circumstances (e.g. in a reverse proxy situation), you may need to specify a reportsBaseUrl if the default value is not correct.
    *
