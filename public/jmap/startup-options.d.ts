@@ -229,6 +229,8 @@ declare interface JCoreOptions {
    */
   restBaseUrl?: string
 
+  reportsBaseUrl?: string
+
   /**
    * If the project you access can be accessed anonymously,
    * you are not forced to pass a session token but you have
