@@ -229,29 +229,6 @@ declare interface JCoreOptions {
    */
   restBaseUrl?: string
 
-  /**
-   * Optional JMap Server base url for reports.
-   *
-   * Default value is : http://<jmap-server-address>:<jmap-server-port>/reports
-   *
-   * In some circumstances (e.g. in a reverse proxy situation), you may need to specify a reportsBaseUrl if the default value is not correct.
-   *
-   * ```html
-   * <html>
-   *   ...
-   *   <body>
-   *     <script type="text/javascript">
-   *       window.JMAP_OPTIONS = {
-   *         ...
-   *         // a valid report base url
-   *         reportsBaseUrl: "http://my-custom-jmap-server-url/reverse-proxy-path"
-   *       }
-   *     </script>
-   *     ...
-   *   </body>
-   * </html>
-   * ```
-   */
   reportsBaseUrl?: string
 
   /**
