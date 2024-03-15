@@ -229,6 +229,9 @@ declare interface JCoreOptions {
    */
   restBaseUrl?: string
 
+  /**
+   * reportsBaseUrl
+   */
   reportsBaseUrl?: string
 
   /**
